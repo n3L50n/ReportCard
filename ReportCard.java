@@ -1,22 +1,24 @@
 public class ReportCard {
-    
-    private int mTestPercentage;
-
-    private int mQuizPercentage;
-
+   
+    // Private variables representing students test, quiz, and essay scores
+    private double mTestPercentage;
+    private double mQuizPercentage;
     private char mEssayScore; 
 
-    public ReportCard(int testPercentage, int quizPercentage, char essayScore ){
+    /**
+     * @param testPercentage 
+     */
+    public ReportCard(double testPercentage, double quizPercentage, char mEssayScore){
         mTestPercentage = testPercentage;
         mQuizPercentage = quizPercentage;
-        mEssayScore = essayScore;
+ //       mEssayScore = essayScore;
     }
 
-    public int getTestPercentage(){
+    public double getTestPercentage(){
         return mTestPercentage;
     }
 
-    public int getQuizPercentage(){
+    public double getQuizPercentage(){
         return mQuizPercentage;
     }
 
@@ -26,18 +28,38 @@ public class ReportCard {
 
     @Override
     public String toString() {
-        return "Report Card { \n" + mTestPercentage + "% on tests.\n" + mQuizPercentage + "% on quizzes." + mEssayScore + " score on essays }";
+        return "Report Card { \n" + mTestPercentage + "% on tests.\n" + mQuizPercentage + "% on quizzes.\n" + mEssayScore + " score on essays }";
     }
 
-    public int setTestPercentage(){
+    /**
+     * @param testList an array of integers representing a students test scores
+     */
+    public double setTestPercentage(int[] testList){
+        int sum = 0;
+        for(int i = 0; i<testList.length;i++){
+            sum = sum + testList[i]; 
+        }
+        mTestPercentage = sum / testList.length;
+
         return mTestPercentage;
     }
 
-    public int setQuizPercentage(){
+    /**
+     * @param quizList an array of integers representing a students quiz scores
+     */
+    public double setQuizPercentage(int[] quizList){
+        int sum = 0;
+        for(int i = 0; i<quizList.length;i++){
+            sum = sum + quizList[i]; 
+        }
+        mQuizPercentage = sum / quizList.length;
+
         return mQuizPercentage;
     }
 
-    public char setEssayScore(){
+
+    public char setEssayScore(char[] averageEssay){
+
         return mEssayScore;
     }
 }
