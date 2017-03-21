@@ -3,15 +3,13 @@ public class ReportCard {
     // Private variables representing students test, quiz, and essay scores
     private double mTestPercentage;
     private double mQuizPercentage;
-    private char mEssayScore; 
 
     /**
      * @param testPercentage 
      */
-    public ReportCard(double testPercentage, double quizPercentage, char mEssayScore){
+    public ReportCard(double testPercentage, double quizPercentage){
         mTestPercentage = testPercentage;
         mQuizPercentage = quizPercentage;
- //       mEssayScore = essayScore;
     }
 
     public double getTestPercentage(){
@@ -22,13 +20,9 @@ public class ReportCard {
         return mQuizPercentage;
     }
 
-    public char getEssayScore(){
-        return mEssayScore;
-    }
-
     @Override
     public String toString() {
-        return "Report Card { \n" + mTestPercentage + "% on tests.\n" + mQuizPercentage + "% on quizzes.\n" + mEssayScore + " score on essays }";
+        return "Report Card { \n" + mTestPercentage + "% on tests.\n" + mQuizPercentage + "% on quizzes.\n" + "}";
     }
 
     /**
@@ -55,11 +49,5 @@ public class ReportCard {
         mQuizPercentage = sum / quizList.length;
 
         return mQuizPercentage;
-    }
-
-
-    public char setEssayScore(char[] averageEssay){
-
-        return mEssayScore;
     }
 }
